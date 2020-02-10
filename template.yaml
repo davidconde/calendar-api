@@ -6,14 +6,14 @@ Description: >
 Globals:
   Function:
     Timeout: 3
-    Runtime: nodejs12.x
+    Runtime: nodejs10.x
 
 Resources:
-  HelloWorldFunction:
+  EchoFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: src/echo/
-      Handler: app.lambdaHandler
+      Handler: index.lambdaHandler
       Events:
         HelloWorld:
           Type: Api
