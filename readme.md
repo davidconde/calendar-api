@@ -8,13 +8,14 @@ Data will be stored using DynamoDB using one table. For more information about s
 The API will be supporting 4 main queries:
 
 - getEvents: Gets all the events for a given calendar in a specified period. 
-- addEvent: Adds a new event into a given calendar
-- clear: Clears a calendar
+- putEvent: Adds a new event into a given calendar
 - deleteEvent: Deletes an event for a given calendar
+- clear: Clears a calendar
 
 # getEvents
 
 API to get upcoming events for a given calendar. 
+
 
 ## Request
 
@@ -23,6 +24,7 @@ Request will have the following fields:
  - calendarId: *string* (required): id of the calendar to retrieve
  - startDate: *date* (required): Starting date for the search. Any appointment that starts after or on this date will be returned on the search.
  - endDate: *date* (required): Ending date for the search. Any appointment that ends before or on this endDate will be returned on the search.
+
 
 ## Response
 
