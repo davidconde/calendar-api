@@ -5,8 +5,10 @@ Description: >
   
 Globals:
   Function:
-    Timeout: 3
     Runtime: nodejs10.x
+    Timeout: 5
+    MemorySize: 256
+    
 
 Resources:
   EchoFunction:
@@ -14,12 +16,30 @@ Resources:
     Properties:
       CodeUri: src/echo/
       Handler: index.lambdaHandler
+      Layers:
+        - !Ref TheLayer
       Events:
         HelloWorld:
           Type: Api
           Properties:
             Path: /echo
             Method: get
+
+
+### ================
+### Layers
+### ================
+
+  TheLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: base-layer
+      Description: Dependencies for Cognito
+      ContentUri: ./src/layers/base/
+      CompatibleRuntimes:
+        - nodejs10.x
+      LicenseInfo: "MIT"
+      RetentionPolicy: Retain
 
 Outputs:
   HelloWorldApi:
