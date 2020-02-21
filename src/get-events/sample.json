@@ -1,0 +1,29 @@
+{
+    "id": "event-id",
+    "date": "2020-02-20T20:00:00.00Z",
+    "duration": "30",
+    "title": "sample event hardcoded for tests",
+    "description": "sample event hardcoded for tests",
+    "location": "Manchester, United Kingdom",
+    "organiser": {
+        "id": "44f21745-1503-44c3-bad2-659b21310315",
+        "displayName": "David Conde Marin"
+    },
+    "attendees": [
+        { 
+            "id": "44f21745-1503-44c3-bad2-659b21310315",
+            "displayName": "David Conde Marin",
+            "self": true
+        },
+        { 
+            "id": "8086df2f-ecdc-4385-a861-9d4703c1c733",
+            "displayName": "Another Attendee",
+            "self": false
+        }
+    ],
+    "passcode": "12345",
+    "reminders": [
+        { "method": "SMS", "minutes": "10" },
+        { "method": "EMAIL", "minutes": "10" }
+    ]
+}
