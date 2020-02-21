@@ -1,0 +1,27 @@
+{
+  "name": "calendar-api",
+  "version": "1.0.0",
+  "description": "calendar api main package (mostly for testing)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidconde/calendar-api.git"
+  },
+  "author": "David Conde Marin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidconde/calendar-api/issues"
+  },
+  "homepage": "https://github.com/davidconde/calendar-api#readme",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "jest": {
+      "modulePaths": [
+          "<rootDir>/src/layers/base/nodejs/node_modules/"
+      ]
+  }
+}
