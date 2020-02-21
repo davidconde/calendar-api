@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dcm-lambda-utils": "^1.0.3"
+    "dcm-lambda-utils": "^1.0.3",
+    "validator": "^12.2.0"
   }
 }
