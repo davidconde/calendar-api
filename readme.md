@@ -12,10 +12,44 @@ The API will be supporting 4 main queries:
 - deleteEvent: Deletes an event for a given calendar
 - clear: Clears a calendar
 
+# putEvent
+
+Allows to put a new event for a given calendar. 
+
+*ENDPOINT*: PUT /events
+
+## Request 
+
+To be able to save a new event, the request will need the following fields:
+
+ - calendarId: *string* (required): id of the calendar to retrieve
+ - date *date* (required): Date when the event is ocurring. This will be in [RFC3339](https://tools.ietf.org/html/rfc3339) format
+ - duration *int* (required): Duration of the event in minutes
+ - title *string* (required): Title of the event
+ - description *string*: Long description of the event. 
+ - location *string*: Location of the event, this field could be used as a link for online events
+ - attendees *array*: A list of all the attendees to the event
+   - id *string* (required): Id of the attendee (this is usually an email).
+   - displayName *string*: Display name of the attendee
+ - passcode *string*: passcode for the event (if one is needed)
+ - reminders *array*: A list of reminders to be sent for this event to the organiser
+   - method *string* (required): Delivery method for the reminder (SMS|EMAIL)
+   - minutes *int* (required): How many minutes before the event this will be delivered 
+
+## Response
+
+Once the new event has been saved, the response will be the following:
+
+ - done: *bool*: Indicates if the request was successfully completed or not.
+ - result *object*: If successful, the result will contain the following:
+    - id *string*: Id of the event recently created
+ - error *string*: If not successful, contains an error message indicating why.
+
 # getEvents
 
 API to get upcoming events for a given calendar. 
 
+*ENDPOINT*: GET /event
 
 ## Request
 
