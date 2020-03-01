@@ -32,7 +32,7 @@ describe("Basic validation test suite", () => {
     })
 
     it("Returns 400 when title is invalid", async () => {
-        const event = {body: JSON.stringify({ calendarId: "some-id", date: "1985-04-12T23:20:50.52Z", duration: "10", title: ""})};
+        const event = {body: JSON.stringify({ calendarId: "some-id", date: "1985-04-12T23:20:50.52Z", duration: 10, title: ""})};
         const response = await lambdaHandler(event, null);
         expect(response.statusCode).toBe(400)
     })    

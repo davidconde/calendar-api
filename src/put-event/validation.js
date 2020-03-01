@@ -29,7 +29,9 @@ const validateRequest = (requestBody) => {
         return "Invalid date. Date is required and the provided one has to comply with RFC3339.";
     }
 
-    if (!validator.isInt(requestBody.duration)) {
+    const duration = requestBody.duration;
+
+    if ( typeof duration === "number" && duration % 1 === 0 ) {
         return "Invalid duration. Duration is required and the provided one has to be an integer.";
     }
 
