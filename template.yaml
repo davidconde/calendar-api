@@ -10,7 +10,6 @@ Globals:
     MemorySize: 256
     Layers:
         - !Ref BaseLayer
-    
 
 Resources:
   EchoFunction:
