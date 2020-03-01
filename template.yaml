@@ -35,6 +35,18 @@ Resources:
           Properties:
             Path: /events
             Method: get
+  
+  PutEvent:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/put-event/
+      Handler: index.lambdaHandler
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /events
+            Method: put
 
 
 ### ================
