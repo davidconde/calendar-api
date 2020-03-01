@@ -22,8 +22,6 @@ describe("Basic validation test suite", () => {
     it("Returns 400 when date is invalid", async () => {
         const event = {body: JSON.stringify({ calendarId: "some-id", date: ""})};
         const response = await lambdaHandler(event, null);
-        
-        console.log(response)
         expect(response.statusCode).toBe(400)
     })
 
