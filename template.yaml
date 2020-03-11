@@ -8,6 +8,9 @@ Globals:
     Runtime: nodejs10.x
     Timeout: 5
     MemorySize: 256
+    Environment:
+      Variables:
+        CALENDAR_API_DYNAMO_TABLE: !Ref Table
     Layers:
         - !Ref BaseLayer
 
