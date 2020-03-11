@@ -16,8 +16,7 @@ exports.lambdaHandler = async (event, context) => {
         return ResponseUtil.Error(400, validationResult);
     }
 
-    const params = {};
-    const response = await eventPoster(params);
+    const response = await eventPoster(body);
 
     return ResponseUtil.OK(response);
 };
