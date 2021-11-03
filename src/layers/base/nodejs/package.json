@@ -11,6 +11,6 @@
   "dependencies": {
     "aws-sdk": "^2.630.0",
     "dcm-lambda-utils": "^1.0.3",
-    "validator": "^12.2.0"
+    "validator": "^13.7.0"
   }
 }
